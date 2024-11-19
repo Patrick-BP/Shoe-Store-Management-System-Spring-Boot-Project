@@ -25,7 +25,7 @@ public class Billing {
     @Column(nullable = false, name = "customer_name")
     private String customerName;
     @Column(nullable = false, name = "customer_mobile")
-    private int customerMobile;
+    private String customerMobile;
     @Column(nullable = false, name= "order_data")
     private Timestamp orderDate;
     @Column(nullable = false, name= "shoe_id")
