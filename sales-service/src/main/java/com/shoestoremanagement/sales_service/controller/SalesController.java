@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/sales")
@@ -28,12 +29,18 @@ public class SalesController {
 
     @PostMapping
     public ResponseEntity<Sale> createSale(@RequestBody Sale sale) {
-        return ResponseEntity.status( HttpStatus.CREATED).body(salesService.createSale(sale));
+        return ResponseEntity.status(HttpStatus.CREATED).body(salesService.createSale(sale));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Sale> updateSale(@PathVariable Long id, @RequestBody Sale sale) {
         return ResponseEntity.ok(salesService.updateSale(id, sale));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Sale> patchSale(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+        Sale updatedSale = salesService.patchSale(id, updates);
+        return ResponseEntity.ok(updatedSale);
     }
 
     @DeleteMapping("/{id}")
