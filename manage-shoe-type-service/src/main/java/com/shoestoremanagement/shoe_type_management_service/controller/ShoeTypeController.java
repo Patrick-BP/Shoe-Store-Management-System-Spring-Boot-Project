@@ -40,6 +40,7 @@ public class ShoeTypeController {
         return updatedShoeType != null ? ResponseEntity.ok(updatedShoeType) : ResponseEntity.notFound().build();
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteShoeType(@PathVariable Long id) {
         shoeTypeService.deleteShoeType(id);
