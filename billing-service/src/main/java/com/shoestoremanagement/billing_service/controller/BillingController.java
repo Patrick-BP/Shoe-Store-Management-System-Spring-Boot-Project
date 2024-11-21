@@ -32,12 +32,7 @@ public class BillingController {
         return ResponseEntity.ok(billingService.getAllBillings());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<BillingDTO> updateBilling(
-            @PathVariable Long id,
-            @RequestBody BillingDTO billingDTO) {
-        return ResponseEntity.ok(billingService.updateBilling(id, billingDTO));
-    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBilling(@PathVariable Long id) {
@@ -51,10 +46,18 @@ public class BillingController {
         return ResponseEntity.ok(billingService.getBillingsByDate(date));
     }
 
-    @GetMapping("/by-customer")
+    @GetMapping("/order")
+    public ResponseEntity<List<BillingDTO>> getBillingsByOrder(
+            @RequestParam String order) {
+
+        return ResponseEntity.ok(billingService.getBillingsByOrder(order));
+    }
+
+    @GetMapping("/customer")
     public ResponseEntity<List<BillingDTO>> getBillingsByCustomer(
-            @RequestParam String customerName) {
-        return ResponseEntity.ok(billingService.getBillingsByCustomer(customerName));
+            @RequestParam String name) {
+
+        return ResponseEntity.ok(billingService.getBillingsByCustomer(name));
     }
 
 }

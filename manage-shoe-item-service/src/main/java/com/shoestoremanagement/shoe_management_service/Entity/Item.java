@@ -14,12 +14,14 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "shoe-itms")
+@Table(name = "shoe-items")
 public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, name = "item_code")
+    private String item_code;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)

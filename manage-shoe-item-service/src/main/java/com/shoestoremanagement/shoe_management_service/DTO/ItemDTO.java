@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 public class ItemDTO {
 
     private Long id;
+    private String item_code;
     private String name;
     private String description;
     private BigDecimal price;
@@ -34,6 +35,7 @@ public class ItemDTO {
         dto.setType_id(item.getType_id());
         dto.setQuantity(item.getQuantity());
         dto.setCreatedAt(item.getCreatedAt());
+        dto.setItem_code(item.getItem_code());
 
         return dto;
     }
@@ -48,6 +50,7 @@ public class ItemDTO {
         item.setQuantity(this.quantity);
         item.setType_id(this.type_id);
         item.setCreatedAt(this.createdAt);
+        item.setItem_code(this.getItem_code());
 
 
         return item;

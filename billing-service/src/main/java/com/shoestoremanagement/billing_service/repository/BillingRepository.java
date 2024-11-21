@@ -11,5 +11,5 @@ import java.util.List;
 public interface BillingRepository extends JpaRepository<Billing, Long> {
     List<Billing> findByOrderDate(Timestamp orderDate);
     List<Billing> findByCustomerName(String customerName);
-    List<Billing> findByOrderNo(Long orderNo);
+    List<Billing> findByOrderNo(String orderNo);
 }

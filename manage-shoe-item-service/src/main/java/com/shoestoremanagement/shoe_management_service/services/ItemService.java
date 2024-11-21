@@ -56,6 +56,8 @@ public class ItemService {
         item.setPrice(itemDTO.getPrice());
         item.setQuantity(itemDTO.getQuantity());
         item.setType_id(itemDTO.getType_id());
+        item.setItem_code(itemDTO.getItem_code());
+
 
         return ItemDTO.fromEntity(itemsRepository.save(item));
     }

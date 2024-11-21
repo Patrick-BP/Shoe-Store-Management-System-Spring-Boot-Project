@@ -26,6 +26,7 @@ public class ItemController {
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public ItemDTO createNewItem(@Valid @RequestBody ItemDTO item){
+        System.out.println(item);
          itemService.createItem(item);
         return item;
     }

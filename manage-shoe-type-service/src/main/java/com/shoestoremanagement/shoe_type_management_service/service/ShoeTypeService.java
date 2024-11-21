@@ -28,7 +28,7 @@ public class ShoeTypeService {
 
     public ShoeType updateShoeType(Long typeId, ShoeType shoeType) {
         if (shoeTypeRepository.existsById(typeId)) {
-            shoeType.setTypeId(typeId);
+            shoeType.setType_id(typeId);
             return shoeTypeRepository.save(shoeType);
         }
         return null;

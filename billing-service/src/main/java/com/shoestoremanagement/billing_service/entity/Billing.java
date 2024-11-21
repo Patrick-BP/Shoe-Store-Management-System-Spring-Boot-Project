@@ -21,7 +21,7 @@ public class Billing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false, name = "order_number")
-    private Long orderNo;
+    private String orderNo;
     @Column(nullable = false, name = "customer_name")
     private String customerName;
     @Column(nullable = false, name = "customer_mobile")

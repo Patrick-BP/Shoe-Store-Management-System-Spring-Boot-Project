@@ -15,7 +15,7 @@ import java.util.Objects;
 public class BillingDTO {
 
     private Long id;
-    private Long orderNo;
+    private String orderNo;
     private String customerName;
     private String customerMobile;
     private Timestamp orderDate;

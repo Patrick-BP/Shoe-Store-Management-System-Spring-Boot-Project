@@ -14,7 +14,7 @@ public class ShoeType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long typeId;
+    private Long type_id;
 
     @Column(name = "type_name", nullable = false, unique = true)
     private String typeName;

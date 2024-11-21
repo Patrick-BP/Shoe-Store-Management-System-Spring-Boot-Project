@@ -45,22 +45,6 @@ public class BillingService {
     }
 
 
-    public BillingDTO updateBilling(Long id, BillingDTO billingDTO) {
-        if (!billingRepository.existsById(id)) {
-            throw new BillingNotFoundException("Billing not found with id: " + id);
-        }
-
-        validateBillingData(billingDTO);
-        billingDTO.setId(id);
-        billingDTO.calculateTotal();
-
-        Billing billing = billingDTO.toEntity();
-        billing = billingRepository.save(billing);
-
-
-        return BillingDTO.fromEntity(billing);
-    }
-
 
     public void deleteBilling(Long id) {
         if (!billingRepository.existsById(id)) {
@@ -81,6 +65,12 @@ public class BillingService {
 
     public List<BillingDTO> getBillingsByCustomer(String customerName) {
         return billingRepository.findByCustomerName(customerName).stream()
+                .map(BillingDTO::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    public List<BillingDTO> getBillingsByOrder(String orderNo) {
+        return billingRepository.findByOrderNo(orderNo).stream()
                 .map(BillingDTO::fromEntity)
                 .collect(Collectors.toList());
     }
