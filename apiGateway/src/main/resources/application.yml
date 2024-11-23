@@ -1,0 +1,52 @@
+server:
+  port: 8080 # Gateway runs on this port
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: billing-service
+          uri: http://localhost:8002 # Replace with actual Sales Service URL
+          predicates:
+            - Path=/api/billing/**
+
+        - id: shoe-management-service
+          uri: http://localhost:8000 # Replace with actual Inventory Service URL
+          predicates:
+            - Path=/api/shoe-item/**
+
+        - id: shoe-type-management-service
+          uri: http://localhost:8001 # Replace with actual Customer Service URL
+          predicates:
+            - Path=/api/shoe-type/**
+
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Exposes all actuator endpoints
+  endpoint:
+    gateway:
+      enabled: true # Gateway-specific metrics

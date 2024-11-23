@@ -1,0 +1,15 @@
+server:
+  port: 8761 # Eureka Server default port
+
+eureka:
+  client:
+    register-with-eureka: false # Disable self-registration for the server
+    fetch-registry: false       # Disable fetching registry for the server
+  instance:
+    hostname: localhost         # Hostname of the Eureka server
+
+spring:
+  application:
+    name: discovery-server      # Name of the application
+
+
