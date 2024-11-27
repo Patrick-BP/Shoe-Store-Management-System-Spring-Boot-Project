@@ -37,10 +37,10 @@ public class Billing {
     @Column(nullable = false, name = "total_price")
     private BigDecimal total;
 
-    @PrePersist
-    protected void onCreate(){
-        this.orderDate = Timestamp.from(Instant.now());
-    }
+//    @PrePersist
+//    protected void onCreate(){
+//        this.orderDate = Timestamp.from(Instant.now());
+//    }
 
 
 }
