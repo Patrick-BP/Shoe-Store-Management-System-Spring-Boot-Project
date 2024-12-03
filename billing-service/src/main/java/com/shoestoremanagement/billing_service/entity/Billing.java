@@ -34,8 +34,8 @@ public class Billing {
     private int quantity;
     @Column(nullable = false, name = "unit_price")
     private BigDecimal unitPrice;
-    @Column(nullable = false, name = "total_price")
-    private BigDecimal total;
+    @Column( name = "total_price")
+    private BigDecimal total = BigDecimal.ZERO;
 
     @PrePersist
     protected void onCreate(){

@@ -28,10 +28,15 @@
 			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 
+
 		<!-- Spring Boot Actuator (optional, for monitoring endpoints) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 	</dependencies>
 

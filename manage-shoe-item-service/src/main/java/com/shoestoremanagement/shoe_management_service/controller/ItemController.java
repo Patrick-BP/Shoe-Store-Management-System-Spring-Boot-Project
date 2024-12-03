@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/api/shoe-item")
 public class ItemController {
 
-
     private final ItemService itemService;
 
     @Autowired

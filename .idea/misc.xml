@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/manage-shoe-item-service/pom.xml" />
         <option value="$PROJECT_DIR$/manage-shoe-type-service/pom.xml" />
         <option value="$PROJECT_DIR$/discover-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../../Shoe-Store-Management-System-Spring-Boot-Project/billing-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-Gateway" />
         <module name="shoe-management-service" />
-        <module name="billing-service" />
+        <module name="billing-service (1)" />
         <module name="shoe-type-management-service" />
         <module name="discover-server" />
+        <module name="api-gateway" />
+        <module name="billing-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,8 +25,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-Gateway" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="billing-service" options="-parameters" />
+      <module name="billing-service (1)" options="-parameters" />
       <module name="discover-server" options="-parameters" />
       <module name="report-service" options="-parameters" />
       <module name="sales-service" options="-parameters" />

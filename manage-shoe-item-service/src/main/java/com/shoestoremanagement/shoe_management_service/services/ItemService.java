@@ -80,7 +80,7 @@ public class ItemService {
         if(item.getQuantity() + quantity < 0){
             throw new InsufficientStockException("Not enough stock available");
         }
-        item.setQuantity(item.getQuantity() + quantity);
+        item.setQuantity(quantity);
         return ItemDTO.fromEntity(itemsRepository.save(item));
     }
 

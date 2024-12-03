@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../Shoe-Store-Management-System-Spring-Boot-Project" vcs="Git" />
   </component>
 </project>
